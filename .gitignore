@@ -1,0 +1,4 @@
+*.blend?
+.idea
+__pycache__
+Thumbs.db
