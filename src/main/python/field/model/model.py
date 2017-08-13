@@ -3,14 +3,19 @@ __author__ = 'Monster'
 import random
 
 class Model():
-    def __init__(self, field, emitter):
+    def __init__(self, field):
         self.field = field
-        self.emitter = emitter
+        self.views = []
 
-    def addTileAtRandomLocation(self, food):
+    def addTileAtRandomLocation(self, tile):
         field = self.field
         x = random.randint(0, field.width)
         y = random.randint(0, field.height)
 
-        field.setTile(x, y, food)
-        emitter.
+        field.setTile(x, y, tile)
+        for view in self.views:
+            view.createRepresentation(x, y, tile)
+
+
+    def addView(self, view):
+        self.views.append(view)

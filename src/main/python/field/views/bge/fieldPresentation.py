@@ -9,5 +9,5 @@ class FieldPresentation():
     def findPresentation(self, tile):
         return self.tiles[tile]
 
-    def createPresentation(self, tile):
-        self.emitter.createTileRepresentation(tile)
+    def createRepresentation(self, x, y, tile):
+        self.emitter.createTileRepresentation(x, y, tile)
