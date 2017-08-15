@@ -38,7 +38,7 @@ def create():
     model.addView(presentation)
     setupParticipatingObjects(model, presentation)
 
-    addRandomFoodCores(5)
+    model.addRandomFoodCores(5)
 
 
 def landHere():
@@ -61,7 +61,8 @@ def addRandomFoodCores(amount):
     for i in range(amount):
         x = random.randint(0, field.width)
         y = random.randint(0, field.height)
-        getModel().createTile(Food(x, y, FOOD_BLOB))
+        type = random.randint(1,3)
+        getModel().createTile(Food(x, y, type))
 
 
 def getModel():

@@ -9,7 +9,7 @@ class Field():
         self.tiles = {}
 
     def getTile(self, x, y):
-        key = (x,y)
+        key = (x, y)
         try:
             return self.tiles[key]
         except KeyError:
@@ -20,3 +20,6 @@ class Field():
         for column in range(tile.size[0]):
             for row in range(tile.size[1]):
                 self.tiles[x+column, y+row] = tile
+
+    def isEmpty(self, x, y):
+        return (x, y) in self.tiles
